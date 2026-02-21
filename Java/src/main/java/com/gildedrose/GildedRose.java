@@ -10,6 +10,7 @@ class GildedRose {
     public void updateQuality() {
         //loop through all items
         for (int i = 0; i < items.length; i++) {
+
             //if the item is not named aged brie and is not named backstage passes
             if (!items[i].name.equals("Aged Brie")
                     && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
@@ -50,7 +51,7 @@ class GildedRose {
                 }
             }
 
-            //if the name is sulfuras
+            //if the name isnt sulfuras
             if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
                 //decrease sell in by 1
                 items[i].sellIn = items[i].sellIn - 1;
