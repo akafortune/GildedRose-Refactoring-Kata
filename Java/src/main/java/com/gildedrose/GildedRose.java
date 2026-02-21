@@ -88,12 +88,4 @@ class GildedRose {
             }
         }
     }
-
-    public boolean IsASpecialName(String itemName){
-        if(itemName.equals("Aged Brie") || itemName.equals("Backstage passes to a TAFKAL80ETC concert") || itemName.equals("Sulfuras, Hand of Ragnaros")){
-            return true;
-        } else {
-            return false;
-        }
-    }
 }
