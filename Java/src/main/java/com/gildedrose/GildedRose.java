@@ -57,6 +57,7 @@ class GildedRose {
                 items[i].sellIn = items[i].sellIn - 1;
             }
 
+            //this whole statement is if sellin < 0 and name is not special and quality > 0 then quality--
             //if the item's sell in is less than 0
             if (items[i].sellIn < 0) {
                 //and if the name is not aged brie
@@ -76,7 +77,7 @@ class GildedRose {
                         //set quality to 0 (WTF)
                         items[i].quality = items[i].quality - items[i].quality;
                     }
-                // if its name is aged brie
+                // if its name is aged brie and sellin  < 0
                 } else {
                     //and the quality is less than 50
                     if (items[i].quality < 50) {
@@ -85,6 +86,14 @@ class GildedRose {
                     }
                 }
             }
+        }
+    }
+
+    public boolean IsASpecialName(String itemName){
+        if(itemName.equals("Aged Brie") || itemName.equals("Backstage passes to a TAFKAL80ETC concert") || itemName.equals("Sulfuras, Hand of Ragnaros")){
+            return true;
+        } else {
+            return false;
         }
     }
 }
