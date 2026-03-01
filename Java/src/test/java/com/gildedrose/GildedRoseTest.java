@@ -155,4 +155,44 @@ class GildedRoseTest {
        app.updateQuality();
        assertEquals("Backstage passes to a TAFKAL80ETC concert, 7, 10", app.items[0].toString());
    }
+   
+   @Test
+   void BackstagePass7() {
+	   Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49) };
+       GildedRose app = new GildedRose(items);
+       app.updateQuality();
+       assertEquals("Backstage passes to a TAFKAL80ETC concert, 4, 50", app.items[0].toString());
+   }
+   
+   @Test
+   void Conjured1() {
+	   Item[] items = new Item[] { new Item("Conjured Default", 8, 10) };
+       GildedRose app = new GildedRose(items);
+       app.updateQuality();
+       assertEquals("Conjured Default, 7, 8", app.items[0].toString());
+   }
+   
+   @Test
+   void Conjured2() {
+	   Item[] items = new Item[] { new Item("Conjured Default", 0, 10) };
+       GildedRose app = new GildedRose(items);
+       app.updateQuality();
+       assertEquals("Conjured Default, -1, 6", app.items[0].toString());
+   }
+   
+   @Test
+   void ConjuredMisspelled() {
+	   Item[] items = new Item[] { new Item("Conured Default", 8, 10) };
+       GildedRose app = new GildedRose(items);
+       app.updateQuality();
+       assertEquals("Conured Default, 7, 9", app.items[0].toString());
+   }
+   
+   @Test
+   void ConjuredMisplace() {
+	   Item[] items = new Item[] { new Item("Default Conjured", 8, 10) };
+       GildedRose app = new GildedRose(items);
+       app.updateQuality();
+       assertEquals("Default Conjured, 7, 9", app.items[0].toString());
+   }
 }

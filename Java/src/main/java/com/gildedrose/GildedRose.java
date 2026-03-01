@@ -12,6 +12,8 @@ class GildedRose {
     	int lowerQualityThreshold = 0;
     	int lowerSellInThreshold = 0;
     	
+    	
+    	
         //loop through all items
         for (int i = 0; i < items.length; i++) {
         	
@@ -53,14 +55,22 @@ class GildedRose {
                 }
         		
         	} else if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
+        		
+        		String[] itemNameArr = items[i].name.split(" ");
+        		int itemDegradeFactor = 1;
+        		
+        		if(itemNameArr[0].toLowerCase().equals("conjured")) {
+        			itemDegradeFactor = 2;
+        		}
+        		
         		if (quality > lowerQualityThreshold) {
-                    quality--;
+                    quality -= 1 * itemDegradeFactor;
                 }
         		
         		sellIn--;
         		
         		if(sellIn < lowerSellInThreshold && quality > lowerQualityThreshold) {
-        			quality--;
+        			quality -= 1 * itemDegradeFactor;
         		}
         	} 
         	
