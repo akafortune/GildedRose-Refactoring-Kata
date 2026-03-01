@@ -50,7 +50,7 @@ class GildedRose {
                 }
             }
 
-            //if the name is sulfuras
+            //if the name isnt sulfuras
             if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
                 //decrease sell in by 1
                 items[i].sellIn = items[i].sellIn - 1;
